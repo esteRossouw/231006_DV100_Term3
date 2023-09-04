@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Yachts - Trips</title>
+
+    <!-- Style Sheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Borel&family=Cherry+Bomb+One&family=Lato:ital,wght@0,100;0,400;0,700;1,400&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+</head>
+<body>
+   <!-- Nav Bar-->
+   <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"> <img src="assets/YYLogo.png" alt="Logo"  height="24" class="d-inline-block align-text-top">
+        Your Yachts</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active-page" aria-current="page" href="trips.html">Trips</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">Cart</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container mt-5 pt-5">
+      
+      <div class="container-trips">
+        <h1>Your Yachts Options</h1>
+          <h2>Available Trips</h2>
+  
+          <!-- Filter buttons -->
+          <div class="btn-group" role="group" aria-label="Filters">
+              <button type="button" class="all-btn" data-filter="all">All Destinations</button>
+              <button type="button" class="filter-btn" data-filter="short">Short Duration Trips</button>
+              <button type="button" class="filter-btn" data-filter="long">Long Duration Trips</button>
+              <button type="button" class="filter-btn" data-filter="single">Single Destination</button>
+              <button type="button" class="filter-btn" data-filter="multi">Multi Destinations</button>
+              <button type="button" class="filter-btn" data-filter="round">Round Trips</button>
+              <button type="button" class="sale-btn" data-filter="rowboat">Row Boat Special</button>
+          </div>
+  
+          <!-- Trip cards container -->
+          <div class="row" id="trip-container">
+           
+        </div>
+      </div>
+  </div>
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="row">
+          <div class="col-4">
+          </div>
+          <div class="col-4">
+            <div class="foot"><img src="assets/YYLogo Light.png" height="80px"></div>
+            <p>&copy; 2023 Your Yachts</p>
+          </div>
+          <div class="col-4">
+            <div class="icon"><a href="https://www.instagram.com/"><img src="assets/instagram.png" height="30px"></a></div>
+            <div class="icon"><a href="https://web.facebook.com/"><img src="assets/facebook.png" height="30px"></a></div>
+            <div class="icon"><a href="https://twitter.com/"><img src="assets/xtwitter.png" height="30px"></a></div>
+          </div>
+        </div>
+      </footer>
+
+  <!-- Bootstrap and jQuery scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+  <script>
+    const trips = [
+        {
+            name: "Naomi's Yacht",
+            departure: "May 1, 2023",
+            code: "YY001",
+            price: "R30000",
+            duration: "6 days",
+            departure: "Portofino, Italy",
+            destinations: "Cinque Terre, Italy",
+            description: "Embark on a romantic odyssey aboard a luxury yacht, sailing from the enchanting Portofino, Italy, to the captivating Cinque Terre, Italy, where opulent comfort and intimate moments unite in a journey of pure romance.",
+            img: "/assets/lux-charters-1f1UtJIjkTs-unsplash.jpg",
+            data: {
+            long: true,
+            single: true,
+        },
+        },
+        {
+            name: "Imaad's Yacht",
+            departure: "March 21, 2023",
+            code: "YY002",
+            price: "R22000",
+            duration: "7 days",
+            departure: "Santorini, Greece",
+            destinations: "Mykonos, Greece",
+            description: "Embark on a culinary odyssey as you sail from the captivating shores of Santorini, Greece, to the vibrant gastronomic haven of Mykonos, where every stop along the way offers a tantalizing feast for the senses.",
+            img: "/assets/pexels-maksim-goncharenok-5046354.jpg",
+            data: {
+            long: true,
+            single: true,
+            
+        },},
+        {
+            name: "Este's Yacht",
+            departure: "August 24, 2023",
+            code: "YY003",
+            price: "R16000",
+            duration: "4 days",
+            departure: "Nassau, Bahamas",
+            destinations: "Nassau, Bahamas",
+            description: "Embark on a wellness-focused yacht journey from Nassau to the Exuma Cays in the Bahamas, where azure waters and secluded shores set the stage for rejuvenating yoga, spa pampering, and holistic relaxation",
+            img: "assets/handsome-curly-darkskinned-man-black-shorts-white-tshirt-stretches-near-sea-cool-guy-poses-yoga-mat-outside.jpg",
+            data: {
+            short: true,
+            round: true,
+            rowboat: true,
+        },
+        },
+        {
+            name: "Elvis' Yacht",
+            departure: "January 10, 2023",
+            code: "YY004",
+            price: "R13000",
+            duration: "4 days",
+            departure: "Ibiza, Spain",
+            destinations: "Formentera|Valencia|Palma de Mallorca, Spain",
+            description: "Experience the ultimate musical escape on a yacht journey from Ibiza to Formentera, where the rhythm of the waves harmonizes with live music performances, themed parties, and an electrifying fusion of entertainment.",
+            img: "/assets/ivan-ragozin-o9oQaOGpLz0-unsplash.jpg",
+            data: {
+            short: true,
+            multi: true,
+            rowboat: true,
+        },
+        },
+        {
+            name: "Sirus' Yacht",
+            departure: "January 26, 2023",
+            code: "YY005",
+            price: "R10000",
+            duration: "3 days",
+            departure: "Dubrovnik, Croatia",
+            destinations: "Dubrovnik, Croatia",
+            description: "Embark on a celestial odyssey from Dubrovnik to Korčula, where the enchanting Adriatic night sky transforms your yacht into a stargazing haven, revealing the wonders of the cosmos in all their brilliance.",
+            img: "/assets/pexels-meruyert-gonullu-6034018.jpg",
+            data: {
+            short: true,
+            round: true,
+            rowboat: true,
+        },
+        },
+        {
+            name: "Gatsby's Yacht",
+            departure: "June 14, 2023",
+            code: "YY006",
+            price: "R10000",
+            duration: "3 days",
+            departure: "Hamilton, Bermuda",
+            destinations: "Hamilton, Bermuda",
+            description: "Step back in time to an era of opulence and glamour on a Gatsby-themed yacht journey from Hamilton to St. George's in Bermuda, where the allure of the Roaring Twenties comes to life against a backdrop of azure waters and timeless elegance.",
+            img: "/assets/luke-bender-h_YjxPtkRHA-unsplash.jpg",
+            data: {
+            short: true,
+            round: true,
+            rowboat: true,
+        },
+        },
+        {
+            name: "Sarah's Yacht",
+            departure: "December 12, 2023",
+            code: "YY007",
+            price: "R10000",
+            duration: "3 days",
+            departure: "Sydney, Australia",
+            destinations: "Pittwater, Australia",
+            description: "Embark on a kid-friendly adventure from Sydney to Pittwater in Australia, where young explorers can revel in playful activities, captivating wildlife encounters, and seafaring tales amidst the stunning coastal beauty.",
+            img: "/assets/pexels-sergey-makashin-5368722.jpg",
+            data: {
+            short: true,
+            single: true,
+            rowboat: true,
+        },
+        },
+        
+        
+        
+    ];
+
+    
+    function generateTripCards() {
+        const tripContainer = document.getElementById("trip-container");
+
+        trips.forEach((trip, index) => {
+            const tripCard = document.createElement("div");
+            tripCard.className = "card trip-card";
+            tripCard.innerHTML = `
+                <div class="card-body">
+                  <img src= ${trip.img} class="card-img-top" alt="Trip Image">
+                    <h5 class="card-title">${trip.name}</h5>
+                    <p>Departure: ${trip.departure}</p>
+                    <p>Trip Code: ${trip.code}</p>
+                    <p>Price: ${trip.price}</p>
+                    <p>Duration: ${trip.duration}</p>
+                    <p>Departure: ${trip.departure}</p>
+                    <p>Destinations: ${trip.destinations}</p>
+                    <p>Description: ${trip.description}</p>
+                    <button class="btn btn-primary purchase-button mx-auto" style="display: none;"  data-destination="${trip.name}" data-departure="${trip.departure}" data-code="${trip.code}" data-price="${trip.price}" data-duration="${trip.duration}" data-destinations="${trip.destinations}" data-description="${trip.description}">Purchase Ticket</button>
+                </div>
+            `;
+
+            tripContainer.appendChild(tripCard);
+        });
+    }
+
+    
+    generateTripCards();
+    const tripCards = document.querySelectorAll('.trip-card');
+
+tripCards.forEach((tripCard) => {
+    tripCard.addEventListener('click', () => {
+        
+        tripCards.forEach((card) => {
+            card.classList.remove('active-trip');
+            const purchaseButton = card.querySelector('.purchase-button');
+            if (purchaseButton) {
+                purchaseButton.style.display = 'none';
+            }
+        });
+
+      
+        tripCard.classList.add('active-trip');
+
+       
+        const purchaseButton = tripCard.querySelector('.purchase-button');
+        if (purchaseButton) {
+            purchaseButton.style.display = 'block';
+        }
+    });
+    
+    ///
+    const filterButtons = document.querySelectorAll('.filter-btn');
+const allButton = document.querySelector('.all-btn');
+const rowboatButton = document.querySelector('.sale-btn'); // Add this line
+const tripCards = document.querySelectorAll('.trip-card');
+
+filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+
+        filterButtons.forEach((btn) => {
+            btn.classList.remove('active');
+        });
+
+        button.classList.add('active');
+
+        tripCards.forEach((card) => {
+            const tripData = trips.find((trip) => trip.name === card.querySelector('.card-title').textContent);
+            
+            if (filter === 'all' || (tripData && tripData.data && tripData.data[filter])) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
+allButton.addEventListener('click', () => {
+    filterButtons.forEach((button) => {
+        button.classList.remove('active');
+    });
+
+    allButton.classList.add('active');
+
+    tripCards.forEach((card) => {
+        card.style.display = 'block';
+    });
+});
+
+// Add a separate event listener for the "Row Boat Special" button
+rowboatButton.addEventListener('click', () => {
+    filterButtons.forEach((btn) => {
+        btn.classList.remove('active');
+    });
+
+    rowboatButton.classList.add('active');
+
+    tripCards.forEach((card) => {
+        const tripData = trips.find((trip) => trip.name === card.querySelector('.card-title').textContent);
+        
+        if (tripData && tripData.data && tripData.data.rowboat) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});
+
+});
+</script>
+<script>
+  const purchaseButtons = document.querySelectorAll('.purchase-button');
+
+purchaseButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+     
+      const destination = button.getAttribute('data-destination');
+      const departure = button.getAttribute('data-departure');
+      const code = button.getAttribute('data-code');
+      const price = button.getAttribute('data-price');
+      const duration = button.getAttribute('data-duration');
+      const destinations = button.getAttribute('data-destinations');
+      const description = button.getAttribute('data-description');
+
+     
+      const ticket = {
+          destination,
+          departure,
+          code,
+          price,
+          duration,
+          destinations,
+          description,
+      };
+
+      
+      addToCart(ticket);
+
+      
+      alert('Almost there! Your ticket has been added to Cart.');
+
+      
+  });
+});
+
+
+function addToCart(ticket) {
+  
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+  
+  cartItems.push(ticket);
+
+  
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+}
+ </script>
+ 
+ </script>
+</body>
+</html>
