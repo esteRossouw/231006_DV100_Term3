@@ -1,2 +1,2 @@
-# 231006_DV100_Term3
+# 231006_Octo
 Esté Rossouw 231006 DV 100 Term 3 Final Website
